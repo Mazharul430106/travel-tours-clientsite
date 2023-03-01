@@ -1,25 +1,57 @@
-import React from 'react';
+
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext } from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
+    const googleProvider = new GoogleAuthProvider();
+    const { register, handleSubmit } = useForm();
+    const { loginUser, providerLogin } = useContext(AuthContext);
+
+    const handleLogin = (data) => {
+        loginUser(data.email, data.password)
+        .then(result=> {
+            const user = result.user;
+            console.log(user);
+            toast('User Login Successfully');
+        })
+        .catch(error=> {
+            console.log(error);
+        })
+    }
+
+    const googleLogin = ()=>{
+        providerLogin(googleProvider)
+        .then(result=> {
+            const user = result.user;
+            console.log(user)
+        })
+        .catch(error=> console.log(error))
+    }
+
+
+
     return (
         <div className="hero min-h-screen">
             <div className="hero-content lg:w-[550px] w-full flex-col lg:flex-row-reverse">
                 <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
                     <div className="card-body">
                         <h1 className='text-2xl font-bold pt-5 uppercase'>Login Now</h1>
-                        <form action="">
+                        <form onSubmit={handleSubmit(handleLogin)}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" />
+                                <input type="email" name='email' {...register('email', { required: true })} placeholder="email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                                <input type="password" name='password' {...register('password', { required: true })} placeholder="password" className="input input-bordered" />
                                 <label className="label">
                                     <Link className="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>
@@ -32,7 +64,7 @@ const Login = () => {
                             <div className="divider">OR</div>
                         </div>
                         <div className="form-control">
-                            <button className="btn border-none bg-cyan-700 ">Login With Google</button>
+                            <button onClick={googleLogin} className="btn border-none bg-cyan-700 ">Login With Google</button>
                         </div>
                         <div className="flex p-[1px] justify-between">
                             <span>Create a new account</span>
