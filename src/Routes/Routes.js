@@ -7,6 +7,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Shop from "../Pages/Shop/Shop";
 import Tours from "../Pages/Tours/Tours";
+import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
    {
@@ -23,11 +24,11 @@ export const routes = createBrowserRouter([
         },
         {
             path: '/destinations',
-            element: <Destinations></Destinations>
+            element: <PrivateRoute><Destinations></Destinations></PrivateRoute>
         },
         {
             path: '/tours',
-            element: <Tours></Tours>
+            element: <PrivateRoute><Tours></Tours></PrivateRoute>
         },
         {
             path: '/shop',
