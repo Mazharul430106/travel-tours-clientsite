@@ -16,7 +16,7 @@ const Login = () => {
         .then(result=> {
             const user = result.user;
             console.log(user);
-            toast('User Login Successfully');
+            toast.success('User Login Successfully');
         })
         .catch(error=> {
             console.log(error);

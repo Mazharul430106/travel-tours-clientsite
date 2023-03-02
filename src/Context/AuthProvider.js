@@ -3,7 +3,7 @@ import {
     createUserWithEmailAndPassword,
     getAuth, onAuthStateChanged,
     signInWithEmailAndPassword,
-    signInWithPopup, signOut
+    signInWithPopup, signOut, updateProfile
 } from 'firebase/auth';
 import app from '../Firebase/Firebase.init';
 
@@ -28,6 +28,11 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
+    const updateUser = (profile)=>{
+        return updateProfile(auth.currentUser, profile);
+    }
+
+
     // logout User 
     const logoutUser = () => {
         return signOut(auth)
@@ -43,7 +48,7 @@ const AuthProvider = ({ children }) => {
         };
     }, [])
 
-    const authInfo = { user, createUser, loginUser, logoutUser, providerLogin }
+    const authInfo = { user, createUser, loginUser, logoutUser, providerLogin, updateUser }
 
     return (
         <AuthContext.Provider value={authInfo}>

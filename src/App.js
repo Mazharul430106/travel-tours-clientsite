@@ -10,8 +10,8 @@ function App() {
     <div className="App">
       <RouterProvider router={routes}>
         <Main></Main>
-        <Toaster></Toaster>
       </RouterProvider>
+      <Toaster></Toaster>
     </div>
   );
 }

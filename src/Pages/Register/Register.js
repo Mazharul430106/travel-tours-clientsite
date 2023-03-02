@@ -8,13 +8,20 @@ const Register = () => {
 
     const { register, handleSubmit } = useForm();
 
-    const {user, createUser} = useContext(AuthContext);
+    const {user, createUser, updateUser} = useContext(AuthContext);
     console.log(user)
     const registerHandler = (data)=>{
         createUser(data.email, data.password)
         .then(result=> {
             const user = result.user;
             console.log(user);
+            const profile = {
+                displayName : data.name,
+                photoURL: data.url
+            }
+            updateUser(profile)
+            .then(()=>{})
+            .catch(err=> console.log(err))
             toast.success('User Created Successfully')
         })
         .catch(err=> {

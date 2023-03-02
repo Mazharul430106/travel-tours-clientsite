@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
     const { user, logoutUser } = useContext(AuthContext);
     console.log(user)
 
-    const handleLogout = ()=>{
+    const handleLogout = () => {
         logoutUser()
-        .then(result=> {})
-        .catch(error=> console.log(error))
+            .then(result => { })
+            .catch(error => console.log(error))
     }
 
     const menuItems = <>
@@ -31,14 +32,25 @@ const Header = () => {
         <li><Link to='/shop'>Shop</Link></li>
 
         {
-            user?.uid ? <li><Link onClick={handleLogout}>Logout</Link></li>
+            user?.uid ?
+                <>
+                    <li><Link onClick={handleLogout}>Logout</Link></li>
+                </>
                 :
                 <>
                     <li><Link to='/register'>Register</Link></li>
                     <li><Link to='/login'>Login</Link></li>
                 </>
         }
-
+        {
+            user?.photoURL ? <li>
+                <div className='tooltip tooltip-bottom' data-tip={user?.displayName}>
+                    <img className='w-[30px] h-[30px] rounded-full' src={user.photoURL} alt="" />
+                </div>
+                </li>
+                :
+                <li><Link><FaUser></FaUser></Link></li>
+        }
     </>
 
     return (
