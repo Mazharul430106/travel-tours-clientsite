@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
-import { FaUser } from 'react-icons/fa';
+import { FaCartArrowDown, FaUser } from 'react-icons/fa';
 
 const Header = () => {
     const { user, logoutUser } = useContext(AuthContext);
@@ -20,8 +20,8 @@ const Header = () => {
                 Pages
                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
             </Link>
-            <ul className="p-2">
-                <li><Link to='/about'>About</Link></li>
+            <ul className="p-2 bg-slate-100 z-10">
+                <li><Link to='/about'>About Us</Link></li>
                 <li><Link to='/team'>Meet Our Team</Link></li>
                 <li><Link to='/faq'>FAQ</Link></li>
                 <li><Link to='/contact'>Contact Us</Link></li>
@@ -30,7 +30,7 @@ const Header = () => {
         <li><Link to='/destinations'>Destination</Link></li>
         <li><Link to='/tours'>Tours</Link></li>
         <li><Link to='/shop'>Shop</Link></li>
-
+        
         {
             user?.uid ?
                 <>
@@ -51,6 +51,8 @@ const Header = () => {
                 :
                 <li><Link><FaUser></FaUser></Link></li>
         }
+        
+        <li><Link to=''><FaCartArrowDown></FaCartArrowDown></Link></li>
     </>
 
     return (

@@ -10,9 +10,10 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider();
     const { register, handleSubmit } = useForm();
     const { loginUser, providerLogin } = useContext(AuthContext);
+
     const location = useLocation();
     const navigate = useNavigate();
-    const from = location?.state?.from?.pathName || "/";
+    const from = location?.state?.from?.pathName || '/';
     
     const handleLogin = (data) => {
         loginUser(data.email, data.password)

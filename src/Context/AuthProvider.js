@@ -31,10 +31,10 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password);
     }
 
+    //updata user
     const updateUser = (profile)=>{
         return updateProfile(auth.currentUser, profile);
     }
-
 
     // logout User 
     const logoutUser = () => {

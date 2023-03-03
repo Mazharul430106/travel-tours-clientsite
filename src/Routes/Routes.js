@@ -20,7 +20,8 @@ export const routes = createBrowserRouter([
         },
         {
             path: '/about',
-            element: <About></About>
+            element: <About></About>,
+            loader: ()=> fetch('http://localhost:5000/recommendedTours')
         },
         {
             path: '/destinations',
@@ -28,7 +29,8 @@ export const routes = createBrowserRouter([
         },
         {
             path: '/tours',
-            element: <PrivateRoute><Tours></Tours></PrivateRoute>
+            element: <PrivateRoute><Tours></Tours></PrivateRoute>,
+            loader: ()=> fetch('http://localhost:5000/alltours')
         },
         {
             path: '/shop',
