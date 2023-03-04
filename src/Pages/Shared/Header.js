@@ -5,7 +5,7 @@ import { FaCartArrowDown, FaUser } from 'react-icons/fa';
 
 const Header = () => {
     const { user, logoutUser } = useContext(AuthContext);
-    console.log(user)
+    // console.log(user)
 
     const handleLogout = () => {
         logoutUser()

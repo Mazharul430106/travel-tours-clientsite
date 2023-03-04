@@ -12,7 +12,7 @@ const About = () => {
             <div className='about-hero'>
                 <img src={AboutImg} className='w-full' alt="" />
             </div>
-            <div className='flex justify-between py-12 bg-slate-200 lg:text-xl px-[7%]'>
+            <div className='flex justify-between py-10 bg-slate-200 lg:text-xl px-[7%]'>
                 <h1>Travel Tours / About Us</h1>
                 <div className='flex gap-3'>
                     <div className='flex items-center gap-2'>

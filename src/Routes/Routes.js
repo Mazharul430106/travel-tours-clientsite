@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import About from "../Pages/About/About";
+import RecommendedCheckoutPage from "../Pages/About/RecommendedCheckoutPage/RecommendedCheckoutPage";
 import Destinations from "../Pages/Destinations/Destinations";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -43,6 +44,11 @@ export const routes = createBrowserRouter([
         {
             path: '/login',
             element: <Login></Login>
+        },
+        {
+            path: '/recommendedCheckoutPage/:id',
+            element: <RecommendedCheckoutPage></RecommendedCheckoutPage>,
+            loader: ({params})=> fetch(`http://localhost:5000/recommendedTours/${params.id}`)
         },
         {
             path: '*',

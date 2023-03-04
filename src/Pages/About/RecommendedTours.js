@@ -1,13 +1,13 @@
 import React from 'react';
 import { FaSmile } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import './RecommendedTours.css'
+import './RecommendedTours.css';
 
 const RecommendedTours = ({ recommendedTour }) => {
-    const { img, place, ratting, cost } = recommendedTour;
+    const { _id, img, place, ratting, cost } = recommendedTour;
     console.log(recommendedTour);
     return (
-        <Link to="">
+        <Link to={`/recommendedCheckoutPage/${_id}`}>
             <div className="card overlay card-compact w-full relative rounded-none bg-base-100 shadow-xl  ">
                 <figure><img src={img} alt="Shoes" /></figure>
                 <div className="card-body w-full absolute bottom-0">
@@ -21,7 +21,6 @@ const RecommendedTours = ({ recommendedTour }) => {
                     </div>
                 </div>
             </div>
-
         </Link>
     );
 };
