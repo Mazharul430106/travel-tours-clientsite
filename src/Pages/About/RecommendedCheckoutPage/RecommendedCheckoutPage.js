@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+// import { FaFacebookF, FaTwitter } from 'react-icons/fa';
+import { Outlet, useLoaderData } from 'react-router-dom';
+import HeroTitle from '../../../Component/HeroTitle/HeroTitle';
 import AboutNavigation from '../AboutNavigation/AboutNavigation';
 
 
@@ -20,24 +21,11 @@ const RecommendedCheckoutPage = () => {
                 </div>
             </div>
 
-            <div className='flex justify-between gap-2 px-[7%] lg:text-xl py-10 bg-slate-200'>
-                <h3 className='text-xl'>Travel Tours / {place}</h3>
-
-                <div className='flex gap-3'>
-                    <div className='flex items-center gap-2'>
-                        <FaFacebookF className='text-blue-900'></FaFacebookF> 
-                        <span>Facebook</span>
-                    </div>
-                    <div className='flex items-center gap-2'>
-                        <FaTwitter className='text-sky-500'></FaTwitter>
-                        <span>Twitter</span>
-                    </div>
-                </div>
-            </div>
-
-            <div>
+            <HeroTitle place={place}></HeroTitle>
+            <div className='px-[7%]'>
                 <AboutNavigation></AboutNavigation>
             </div>
+            <Outlet></Outlet>
         </section>
     );
 };

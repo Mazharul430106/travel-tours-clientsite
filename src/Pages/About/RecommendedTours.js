@@ -5,7 +5,7 @@ import './RecommendedTours.css';
 
 const RecommendedTours = ({ recommendedTour }) => {
     const { _id, img, place, ratting, cost } = recommendedTour;
-    console.log(recommendedTour);
+    // console.log(recommendedTour);
     return (
         <Link to={`/recommendedCheckoutPage/${_id}`}>
             <div className="card overlay card-compact w-full relative rounded-none bg-base-100 shadow-xl  ">

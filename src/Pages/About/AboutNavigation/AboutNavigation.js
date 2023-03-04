@@ -1,22 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const AboutNavigation = () => {
-
+    const {_id} = useLoaderData();
+    
     const aboutMenuItems = <React.Fragment className="">
-        <li><Link to='/information'>Information</Link></li>
-        <li><Link to='/tourplan'>Tour Plan</Link></li>
-        <li><Link to='/location'>Location</Link></li>
-        <li><Link to='/gallery'>Gallery</Link></li>
-        <li><Link to='/reviews'>Reviews</Link></li>
+        <li><Link to={`/recommendedCheckoutPage/${_id}/information`}>Information</Link></li>
+        <li className='lg:pl-10 text-left'><Link to={`/recommendedCheckoutPage/${_id}/tourplan`}>Tour Plan</Link></li>
+        <li className='lg:pl-10 text-left'><Link to={`/recommendedCheckoutPage/${_id}/location`}>Location</Link></li>
+        <li className='lg:pl-10 text-left'><Link to={`/recommendedCheckoutPage/${_id}/gallery`}>Gallery</Link></li>
+        <li className='lg:pl-10 text-left'><Link to={`/recommendedCheckoutPage/${_id}/reviews`}>Reviews</Link></li>
 
     </React.Fragment>
 
-
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 px-0">
             <div className="flex-none">
-                <ul className="menu lg:menu-horizontal menu-virtical px-1">
+                <ul className="lg:menu-horizontal menu-virtical">
                     {aboutMenuItems}
                 </ul>
             </div>

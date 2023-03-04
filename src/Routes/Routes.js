@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import AboutLayout from "../Layout/AboutLayout";
 import Main from "../Layout/Main";
 import About from "../Pages/About/About";
 import AboutGallery from "../Pages/About/AboutGallery/AboutGallery";
@@ -17,79 +16,72 @@ import Tours from "../Pages/Tours/Tours";
 import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
-   {
-    path: '/',
-    element: <Main></Main>,
-    children:[
-        {
-            path: '/',
-            element: <Home></Home>,
-        },
-        {
-            path: '/about',
-            element: <About></About>,
-            loader: ()=> fetch('http://localhost:5000/recommendedTours')
-        },
-        {
-            path: '/destinations',
-            element: <PrivateRoute><Destinations></Destinations></PrivateRoute>
-        },
-        {
-            path: '/tours',
-            element: <PrivateRoute><Tours></Tours></PrivateRoute>,
-            loader: ()=> fetch('http://localhost:5000/alltours')
-        },
-        {
-            path: '/shop',
-            element: <Shop></Shop>
-        },
-        {
-            path: '/register',
-            element: <Register></Register>
-        },
-        {
-            path: '/login',
-            element: <Login></Login>
-        },
-        {
-            path: '/recommendedCheckoutPage/:id',
-            element: <PrivateRoute><RecommendedCheckoutPage></RecommendedCheckoutPage></PrivateRoute>,
-            loader: ({params})=> fetch(`http://localhost:5000/recommendedTours/${params.id}`)
-        },
-        {
-            path: '*',
-            element: <div>Data Not Found</div>
-        }
-    ]
-   },
-
-   {
-    path: '/',
-    element: <AboutLayout></AboutLayout>,
-    children: [
-        {
-            path: '/information',
-            element: <AboutInformation></AboutInformation>
-        },
-        {
-            path: '/tourplan',
-            element: <AboutTourPlan></AboutTourPlan>
-        },
-        {
-            path: '/location',
-            element: <AboutLocation></AboutLocation>
-        },
-        {
-            path: '/gallery',
-            element: <AboutGallery></AboutGallery> 
-        },
-        {
-            path: '/reviews',
-            element: <AboutReviews></AboutReviews>
-        }
-    ]
-   }
-
-
+    {
+        path: '/',
+        element: <Main></Main>,
+        children: [
+            {
+                path: '/',
+                element: <Home></Home>,
+            },
+            {
+                path: '/about',
+                element: <About></About>,
+                loader: () => fetch('http://localhost:5000/recommendedTours')
+            },
+            {
+                path: '/destinations',
+                element: <PrivateRoute><Destinations></Destinations></PrivateRoute>
+            },
+            {
+                path: '/tours',
+                element: <PrivateRoute><Tours></Tours></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/alltours')
+            },
+            {
+                path: '/shop',
+                element: <Shop></Shop>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/recommendedCheckoutPage/:id',
+                element: <PrivateRoute><RecommendedCheckoutPage></RecommendedCheckoutPage></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/recommendedTours/${params.id}`),
+                children: [
+                    {
+                        path: `/recommendedCheckoutPage/:id/information`,
+                        element: <AboutInformation></AboutInformation>,
+                    },
+                    {
+                        path: '/recommendedCheckoutPage/:id/tourplan',
+                        element: <AboutTourPlan></AboutTourPlan>
+                    },
+                    {
+                        path: '/recommendedCheckoutPage/:id/location',
+                        element: <AboutLocation></AboutLocation>
+                    },
+                    {
+                        path: '/recommendedCheckoutPage/:id/gallery',
+                        element: <AboutGallery></AboutGallery>
+                    },
+                    {
+                        path: '/recommendedCheckoutPage/:id/reviews',
+                        element: <AboutReviews></AboutReviews>
+                    }
+                ]
+            },
+            {
+                path: '*',
+                element: <div>Data Not Found</div>
+            }
+        ]
+    },
 
 ]);
