@@ -1,6 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
+import AboutLayout from "../Layout/AboutLayout";
 import Main from "../Layout/Main";
 import About from "../Pages/About/About";
+import AboutGallery from "../Pages/About/AboutGallery/AboutGallery";
+import AboutInformation from "../Pages/About/AboutInformation/AboutInformation";
+import AboutLocation from "../Pages/About/AboutLocation/AboutLocation";
+import AboutReviews from "../Pages/About/AboutReviews/AboutReviews";
+import AboutTourPlan from "../Pages/About/AboutTourPlan/AboutTourPlan";
 import RecommendedCheckoutPage from "../Pages/About/RecommendedCheckoutPage/RecommendedCheckoutPage";
 import Destinations from "../Pages/Destinations/Destinations";
 import Home from "../Pages/Home/Home";
@@ -47,7 +53,7 @@ export const routes = createBrowserRouter([
         },
         {
             path: '/recommendedCheckoutPage/:id',
-            element: <RecommendedCheckoutPage></RecommendedCheckoutPage>,
+            element: <PrivateRoute><RecommendedCheckoutPage></RecommendedCheckoutPage></PrivateRoute>,
             loader: ({params})=> fetch(`http://localhost:5000/recommendedTours/${params.id}`)
         },
         {
@@ -55,5 +61,35 @@ export const routes = createBrowserRouter([
             element: <div>Data Not Found</div>
         }
     ]
+   },
+
+   {
+    path: '/',
+    element: <AboutLayout></AboutLayout>,
+    children: [
+        {
+            path: '/information',
+            element: <AboutInformation></AboutInformation>
+        },
+        {
+            path: '/tourplan',
+            element: <AboutTourPlan></AboutTourPlan>
+        },
+        {
+            path: '/location',
+            element: <AboutLocation></AboutLocation>
+        },
+        {
+            path: '/gallery',
+            element: <AboutGallery></AboutGallery> 
+        },
+        {
+            path: '/reviews',
+            element: <AboutReviews></AboutReviews>
+        }
+    ]
    }
+
+
+
 ]);

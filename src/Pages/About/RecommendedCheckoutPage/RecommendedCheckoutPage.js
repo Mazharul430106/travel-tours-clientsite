@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
+import AboutNavigation from '../AboutNavigation/AboutNavigation';
 
 
 const RecommendedCheckoutPage = () => {
@@ -34,7 +35,9 @@ const RecommendedCheckoutPage = () => {
                 </div>
             </div>
 
-
+            <div>
+                <AboutNavigation></AboutNavigation>
+            </div>
         </section>
     );
 };
