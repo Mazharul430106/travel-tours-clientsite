@@ -58,6 +58,7 @@ export const routes = createBrowserRouter([
                     {
                         path: `/recommendedCheckoutPage/:id/information`,
                         element: <AboutInformation></AboutInformation>,
+                        loader: ({ params }) => fetch(`http://localhost:5000/recommendedTours/${params.id}`),
                     },
                     {
                         path: '/recommendedCheckoutPage/:id/tourplan',
