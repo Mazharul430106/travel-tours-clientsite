@@ -18,9 +18,7 @@ const AboutInformation = () => {
             <div>
                 <p className='text-left'>{desc}</p>
             </div>
-            <div>
-
-            </div>
+            
         </div>
 
     );

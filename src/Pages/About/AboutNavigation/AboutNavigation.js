@@ -10,7 +10,7 @@ const AboutNavigation = () => {
     const aboutMenuItems = <React.Fragment className="">
         <div className='flex items-center gap-1'>
             <FaEye className='text-gray-500'></FaEye>
-            <li><Link to={`/recommendedCheckoutPage/${_id}/information`}>Information</Link></li>
+            <li><Link to={`/recommendedCheckoutPage/${_id}/`}>Information</Link></li>
         </div>
         <div className='flex items-center gap-1 lg:pl-10 text-left'>
             <FaMap className='text-gray-500'></FaMap>
