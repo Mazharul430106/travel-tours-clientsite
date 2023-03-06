@@ -13,7 +13,7 @@ const Header = () => {
             .catch(error => console.log(error))
     }
 
-    const menuItems = <>
+    const menuItems = <React.Fragment>
         <li><Link to='/'>Home</Link></li>
         <li tabIndex={0}>
             <Link className="justify-between">
@@ -53,7 +53,7 @@ const Header = () => {
         }
         
         <li><Link to=''><FaCartArrowDown></FaCartArrowDown></Link></li>
-    </>
+    </React.Fragment>
 
     return (
         <div className="navbar bg-base-100">
