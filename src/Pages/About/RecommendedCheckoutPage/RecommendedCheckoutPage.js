@@ -124,13 +124,8 @@ const RecommendedCheckoutPage = () => {
                             <FaTwitter className='text-sky-500'></FaTwitter>
                             <h3>@travelTours Hi , can you please submit a ticket at </h3>
                         </div>
-                        
                     </div>
-
-
-
                 </div>
-
             </div>
 
 
