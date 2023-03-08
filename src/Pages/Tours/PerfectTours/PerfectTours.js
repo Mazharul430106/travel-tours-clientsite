@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import DisplayPerfectTours from './DisplayPerfectTours';
 
 const PerfectTours = () => {
@@ -18,6 +19,9 @@ const PerfectTours = () => {
                 {
                     perfectTours.map(perfectTour => <DisplayPerfectTours key={perfectTour._id} perfectTour={perfectTour}></DisplayPerfectTours>)
                 }
+            </div>
+            <div className='py-10'>
+                <Link to='/checkOutAllTours'><button className='btn px-10 border-none rounded bg-cyan-700'>view all tours</button></Link>
             </div>
         </div>
     );

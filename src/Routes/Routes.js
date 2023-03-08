@@ -12,6 +12,10 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Shop from "../Pages/Shop/Shop";
+import CheckOutAllTours from "../Pages/Tours/CheckOutAllTours/CheckOutAllTours";
+import PriceAllPage from "../Pages/Tours/PriceAllPage/PriceAllPage";
+import PriceHighToLowPage from "../Pages/Tours/PriceHighToLowPage/PriceHighToLowPage";
+import PriceLowToHighPage from "../Pages/Tours/PriceLowToHighPage/PriceLowToHighPage";
 import Tours from "../Pages/Tours/Tours";
 import PrivateRoute from "./PrivateRoute";
 
@@ -37,6 +41,26 @@ export const routes = createBrowserRouter([
                 path: '/tours',
                 element: <PrivateRoute><Tours></Tours></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/alltours')
+            },
+            {
+                path: '/checkOutAllTours',
+                element: <CheckOutAllTours></CheckOutAllTours>,
+                loader: ()=> fetch('http://localhost:5000/alltours'),
+                children:[
+                    {
+                        path:'/checkOutAllTours//',
+                        element: <PriceLowToHighPage></PriceLowToHighPage>
+                    },
+                    {
+                        path: '/checkOutAllTours/priceHighToLow',
+                        element: <PriceHighToLowPage></PriceHighToLowPage>
+                    },
+                    {
+                        path: '/checkOutAllTours/allPricePage',
+                        element: <PriceAllPage></PriceAllPage>
+                    }
+                ]
+                
             },
             {
                 path: '/shop',
