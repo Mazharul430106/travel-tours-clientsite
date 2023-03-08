@@ -44,7 +44,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/checkOutAllTours',
-                element: <CheckOutAllTours></CheckOutAllTours>,
+                element: <PrivateRoute> <CheckOutAllTours></CheckOutAllTours></PrivateRoute>,
                 loader: ()=> fetch('http://localhost:5000/alltours'),
                 children:[
                     {
