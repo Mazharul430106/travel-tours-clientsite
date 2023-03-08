@@ -1,9 +1,14 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import DisplayAllPrice from './DisplayAllPrice';
 
 const PriceAllPage = () => {
+    const allTours = useLoaderData();
     return (
         <div>
-            <h1>This is all page</h1>
+            {
+                allTours.map(tour=> <DisplayAllPrice key={tour._id} tour={tour}></DisplayAllPrice>)
+            }
         </div>
     );
 };

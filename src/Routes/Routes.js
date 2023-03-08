@@ -49,15 +49,18 @@ export const routes = createBrowserRouter([
                 children:[
                     {
                         path:'/checkOutAllTours//',
-                        element: <PriceLowToHighPage></PriceLowToHighPage>
+                        element: <PriceLowToHighPage></PriceLowToHighPage>,
+                        loader: ()=> fetch('http://localhost:5000/alltours')
                     },
                     {
                         path: '/checkOutAllTours/priceHighToLow',
-                        element: <PriceHighToLowPage></PriceHighToLowPage>
+                        element: <PriceHighToLowPage></PriceHighToLowPage>,
+                        loader: ()=> fetch('http://localhost:5000/alltours')
                     },
                     {
                         path: '/checkOutAllTours/allPricePage',
-                        element: <PriceAllPage></PriceAllPage>
+                        element: <PriceAllPage></PriceAllPage>,
+                        loader: ()=> fetch('http://localhost:5000/alltours')
                     }
                 ]
                 

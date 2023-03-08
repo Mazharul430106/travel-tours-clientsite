@@ -7,7 +7,7 @@ import CheckOutTourNavigation from '../CheckOutTourNavigation/CheckOutTourNaviga
 
 const CheckOutAllTours = () => {
     const allTours = useLoaderData();
-    console.log(allTours);
+    // console.log(allTours);
     return (
         <div>
             <div>
@@ -16,7 +16,7 @@ const CheckOutAllTours = () => {
             <div className='grid lg:grid-cols-3 mb:grid-cols-2 grid-cols-1 gap-5 py-5 pt-16 px-[7%]'>
                 <div className='lg:col-span-2 pb-5'>
                     <CheckOutTourNavigation></CheckOutTourNavigation>
-                    <div className='pt-5'>
+                    <div className='pt-5 pb-10'>
                         <hr className='border' />
                     </div>
                     <Outlet></Outlet>
