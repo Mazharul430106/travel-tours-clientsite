@@ -21,7 +21,7 @@ const PerfectTours = () => {
                 }
             </div>
             <div className='py-10'>
-                <Link to='/checkOutAllTours'><button className='btn px-10 border-none rounded bg-cyan-700'>view all tours</button></Link>
+                <Link to='/checkoutTours'><button className='btn px-10 border-none rounded bg-cyan-700'>view all tours</button></Link>
             </div>
         </div>
     );

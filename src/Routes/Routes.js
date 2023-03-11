@@ -13,9 +13,9 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Shop from "../Pages/Shop/Shop";
+import AllToursPage from "../Pages/Tours/AllToursPage/AllToursPage";
 import BoxesTours from "../Pages/Tours/BoxesTours/BoxesTours";
-import CheckOutAllTours from "../Pages/Tours/CheckOutAllTours/CheckOutAllTours";
-import PriceAllPage from "../Pages/Tours/PriceAllPage/PriceAllPage";
+import CheckOutTours from "../Pages/Tours/CheckOutTours/CheckOutTours";
 import PriceHighToLowPage from "../Pages/Tours/PriceHighToLowPage/PriceHighToLowPage";
 import PriceLowToHighPage from "../Pages/Tours/PriceLowToHighPage/PriceLowToHighPage";
 import StandardTours from "../Pages/Tours/StandardTours/StandardTours";
@@ -43,7 +43,8 @@ export const routes = createBrowserRouter([
             {
                 path: '/standardTours',
                 element: <StandardTours></StandardTours>,
-                loader: () => fetch('http://localhost:5000/alltours')
+                loader: () => fetch('http://localhost:5000/alltours'),
+               
             },
             {
                 path: '/boxesTours',
@@ -55,26 +56,24 @@ export const routes = createBrowserRouter([
                 element: <ToursGallery></ToursGallery>
             },
             {
-                path: '/checkOutAllTours',
-                element: <PrivateRoute> <CheckOutAllTours></CheckOutAllTours></PrivateRoute>,
-                loader: ()=> fetch('http://localhost:5000/alltours'),
-                children:[
+                path: '/checkoutTours',
+                element: <CheckOutTours></CheckOutTours>,
+                children: [
                     {
-                        path:'/checkOutAllTours//',
-                        element: <PriceLowToHighPage></PriceLowToHighPage>,
-                        loader: ()=> fetch('http://localhost:5000/alltours')
+                        path: '/checkoutTours/priceLowToHigh',
+                        element: <PriceLowToHighPage></PriceLowToHighPage>
                     },
                     {
-                        path: '/checkOutAllTours/priceHighToLow',
-                        element: <PriceHighToLowPage></PriceHighToLowPage>,
-                        loader: ()=> fetch('http://localhost:5000/alltours')
+                        path: '/checkoutTours/priceHighToLow',
+                        element: <PriceHighToLowPage></PriceHighToLowPage>
                     },
                     {
-                        path: '/checkOutAllTours/allPricePage',
-                        element: <PriceAllPage></PriceAllPage>,
+                        path: '/checkoutTours/allPrice',
+                        element: <AllToursPage></AllToursPage>,
                         loader: ()=> fetch('http://localhost:5000/alltours')
                     }
                 ]
+
             },
             {
                 path: '/shop',
@@ -119,12 +118,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkoutPage/:id',
                 element: <CheckOutPage></CheckOutPage>,
-                loader: ({params})=> fetch(`http://localhost:5000/alltours/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:5000/alltours/${params.id}`),
                 children: [
                     {
                         path: '/checkoutPage/:id',
                         element: <AboutInformation></AboutInformation>,
-                        loader: ({params})=> fetch(`http://localhost:5000/alltours/${params.id}`),
+                        loader: ({ params }) => fetch(`http://localhost:5000/alltours/${params.id}`),
                     },
                     {
                         path: '/checkoutPage/:id/tourplan',
@@ -142,10 +141,8 @@ export const routes = createBrowserRouter([
                         path: '/checkoutPage/:id/reviews',
                         element: <AboutReviews></AboutReviews>
                     }
-                   
-
                 ]
-                
+
             },
             {
                 path: '*',

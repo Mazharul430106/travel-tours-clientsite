@@ -28,7 +28,7 @@ const Header = () => {
             </ul>
         </li>
         <li><Link to='/destinations'>Destination</Link></li>
-        <li><Link to='/tours'>Tours</Link>
+        <li><Link to=''>Tours</Link>
             <ul className="p-2 bg-slate-100 z-10">
                 <li><Link to='/standardTours'>Standard Tours</Link></li>
                 <li><Link to='/boxesTours'>Boxes Tours</Link></li>

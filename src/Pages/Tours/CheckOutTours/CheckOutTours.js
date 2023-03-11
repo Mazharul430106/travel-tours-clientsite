@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import TourHeroImg from '../../../assets/allTour-hero.jpg';
 import TourNavigation from '../../../Component/TourNavigation/TourNavigation';
-const StandardTours = () => {
+const CheckOutTours = () => {
     return (
         <div>
             <div>
@@ -21,4 +21,4 @@ const StandardTours = () => {
     );
 };
 
-export default StandardTours;
+export default CheckOutTours;
