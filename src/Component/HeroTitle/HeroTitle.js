@@ -1,10 +1,10 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 
-const HeroTitle = ({place}) => {
+const HeroTitle = ({place_title}) => {
     return (
         <div className='flex justify-between gap-2 px-[7%] lg:text-xl py-10 bg-slate-200'>
-            <h3 className='text-xl'>Travel Tours / {place}</h3>
+            <h3 className='text-xl'>Travel Tours / {place_title}</h3>
 
             <div className='flex gap-3'>
                 <div className='flex items-center gap-2'>

@@ -4,6 +4,7 @@ import DisplayCheckOutAllTours from './DisplayCheckOutAllTours';
 
 import allToursHero from '../../../assets/allTour-hero.jpg';
 import CheckOutTourNavigation from '../CheckOutTourNavigation/CheckOutTourNavigation';
+import Newsletter from '../../../Component/Newsletter/Newsletter';
 
 const CheckOutAllTours = () => {
     const allTours = useLoaderData();
@@ -22,30 +23,24 @@ const CheckOutAllTours = () => {
                     <Outlet></Outlet>
                 </div>
                 <div className='lg:col-span-1'>
-                    <div className="hero bg-base-100">
-                        <div className="hero-content w-full flex-col p-0 lg:flex-row-reverse">
-                            <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
-                                <div className="card-body bg-black ">
-                                    <h1 className='text-3xl text-left font-semibold text-white'>Newsletter</h1>
-                                    <p className='text-left text-white'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non cum.</p>
-                                    <form action="">
-                                        <div className="form-control">
-                                            <label className="label">
-                                                <span className="label-text">Email</span>
-                                            </label>
-                                            <input type="email" placeholder="Email *" className="input input-bordered rounded-none" />
-                                        </div>
+                    
+                   <Newsletter></Newsletter>
 
-                                        <div className="form-control mt-6">
-                                            <button className="btn bg-cyan-600 hover:bg-cyan-700 rounded-none">Subscribe</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                    <div className='border h-24 mt-5'>
+                        <h2>Travel Tips</h2>
+                        <p>tour tips</p>
                     </div>
-
-
+                    <div className='border h-24 mt-5'>
+                        <h2>Flickr</h2>
+                        <p>images gallery here</p>
+                    </div>
+                    <div className='border h-24 mt-5'>
+                        <h2>Contact Us</h2>
+                        <p>social links here</p>
+                    </div>
+                    <div className='border h-24 mt-5'>
+                        <h4>some recommend tours here</h4>
+                    </div>
 
                 </div>
             </div>

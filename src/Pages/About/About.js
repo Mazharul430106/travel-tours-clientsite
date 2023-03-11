@@ -58,7 +58,8 @@ const About = () => {
 
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 pb-16'>
                     {
-                        recommendedTours.map(recommendedTour => <RecommendedTours
+                        recommendedTours.map(recommendedTour => 
+                        <RecommendedTours
                             key={recommendedTour._id}
                             recommendedTour={recommendedTour}
                         ></RecommendedTours>)

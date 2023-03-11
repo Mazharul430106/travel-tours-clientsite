@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './RecommendedTours.css';
 
 const RecommendedTours = ({ recommendedTour }) => {
-    const { _id, img, place, ratting, cost } = recommendedTour;
+    const { _id, img, place_title, ratting, cost } = recommendedTour;
     // console.log(recommendedTour);
     return (
         <Link to={`/recommendedCheckoutPage/${_id}`}>
@@ -16,7 +16,7 @@ const RecommendedTours = ({ recommendedTour }) => {
                         <span className=''>{ratting}</span>
                     </div>
                     <div className='flex items-center justify-between text-white text-xl font-semibold'>
-                        <span className="card-title">{place}</span>
+                        <span className="card-title">{place_title}</span>
                         <span>{cost}</span>
                     </div>
                 </div>

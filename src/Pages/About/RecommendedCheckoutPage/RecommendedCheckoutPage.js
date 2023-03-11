@@ -8,7 +8,7 @@ import { FaSmile, FaTwitter } from 'react-icons/fa';
 
 const RecommendedCheckoutPage = () => {
     const recommendedTour = useLoaderData();
-    const { _id, place, cost, desc, detailsHeroImg, subTitle } = recommendedTour;
+    let { place_title, heroImg, subTitle } = recommendedTour;
     const [recommendedData, setRecommendedData] = useState([]);
     const [selectedDate, setSelectedDate] = useState(new Date());
     const onChangeHandler = (value) => {
@@ -25,16 +25,16 @@ const RecommendedCheckoutPage = () => {
     return (
         <section>
             <div className='details-hero'>
-                <img src={detailsHeroImg} className="details-hero-img w-full" alt="" />
+                <img src={heroImg} className="details-hero-img w-full" alt="" />
                 <div className='details-hero-text'>
                     <div>
-                        <h1 className='text-white lg:text-6xl text-4xl font-semibold pb-5'>{place}</h1>
+                        <h1 className='text-white lg:text-6xl text-4xl font-semibold pb-5'>{place_title}</h1>
                         <h2 className='text-white lg:text-2xl uppercase font-semibold'>{subTitle}</h2>
                     </div>
                 </div>
             </div>
 
-            <HeroTitle place={place}></HeroTitle>
+            <HeroTitle place_title={place_title}></HeroTitle>
             <div className='px-[7%] py-16 grid lg:grid-cols-3 mb:grid-cols-2 grid-cols-1 gap-10'>
                 <div className='lg:col-span-2'>
                     <AboutNavigation></AboutNavigation>
@@ -127,11 +127,6 @@ const RecommendedCheckoutPage = () => {
                     </div>
                 </div>
             </div>
-
-
-
-
-
 
         </section>
     );

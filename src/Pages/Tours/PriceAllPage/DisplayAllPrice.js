@@ -5,11 +5,11 @@ import { FiUser } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const DisplayAllPrice = ({ tour }) => {
-    const { img, cost, days, years, ratting, place_title, desc } = tour;
+    const { img, cost, days, years, ratting, place_title, desc, _id } = tour;
     return (
         <div className='grid lg:grid-cols-3 mb:grid-cols-2 grid-cols-1 border border-r-0 border-l-0 border-t-0 mb-10'>
             <div className='lg:col-span-1'>
-                <img src={img} className='h-full' alt="" />
+                <Link to={`/checkoutPage/${_id}`}><img src={img} className='h-full' alt=""/></Link>
             </div>
             <div className='lg:col-span-2 px-5'>
                 <h1 className='text-left text-2xl font-semibold py-3'>{place_title}</h1>

@@ -28,9 +28,15 @@ const Header = () => {
             </ul>
         </li>
         <li><Link to='/destinations'>Destination</Link></li>
-        <li><Link to='/tours'>Tours</Link></li>
+        <li><Link to='/tours'>Tours</Link>
+            <ul className="p-2 bg-slate-100 z-10">
+                <li><Link to='/standardTours'>Standard Tours</Link></li>
+                <li><Link to='/boxesTours'>Boxes Tours</Link></li>
+                <li><Link to='/toursGallery'>Tours Gallery</Link></li>
+            </ul>
+        </li>
         <li><Link to='/shop'>Shop</Link></li>
-        
+
         {
             user?.uid ?
                 <>
@@ -47,11 +53,11 @@ const Header = () => {
                 <div className='tooltip tooltip-bottom' data-tip={user?.displayName}>
                     <img className='w-[30px] h-[30px] rounded-full' src={user.photoURL} alt="" />
                 </div>
-                </li>
+            </li>
                 :
                 <li><Link><FaUser></FaUser></Link></li>
         }
-        
+
         <li><Link to=''><FaCartArrowDown></FaCartArrowDown></Link></li>
     </React.Fragment>
 

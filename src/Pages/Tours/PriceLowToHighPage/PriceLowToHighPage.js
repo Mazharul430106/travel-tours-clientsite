@@ -6,8 +6,8 @@ const PriceLowToHighPage = () => {
     const allTours = useLoaderData()
     return (
         <div>
-              {
-                allTours.map(tour=> <DisplayAllPrice key={tour._id} tour={tour}></DisplayAllPrice>)
+            {
+                allTours.map(tour => <DisplayAllPrice key={tour._id} tour={tour}></DisplayAllPrice>)
             }
         </div>
     );
