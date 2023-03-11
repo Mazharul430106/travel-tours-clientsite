@@ -1,8 +1,13 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import DisplayPriceHighToLowPage from './DisplayPriceHighToLowPage';
 const PriceHighToLowPage = () => {
+    const allTours = useLoaderData();
     return (
         <div>
-            <h1>This high page</h1>
+            {
+                allTours.map(singleTour=> <DisplayPriceHighToLowPage key={singleTour._id} singleTour={singleTour}></DisplayPriceHighToLowPage>)
+            }
         </div>
     );
 };

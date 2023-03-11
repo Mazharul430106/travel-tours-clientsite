@@ -1,9 +1,14 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import DisplayPriceLowToHighPage from './DisplayPriceLowToHighPage';
 
 const PriceLowToHighPage = () => {
+    const allTours = useLoaderData();
     return (
         <div>
-            <h1>This is Lop Price Page</h1>
+            {
+                allTours.map(singleTour=> <DisplayPriceLowToHighPage key={singleTour._id} singleTour={singleTour}></DisplayPriceLowToHighPage>)
+            }
         </div>
     );
 };
