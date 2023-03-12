@@ -8,6 +8,7 @@ import AboutReviews from "../Pages/About/AboutReviews/AboutReviews";
 import AboutTourPlan from "../Pages/About/AboutTourPlan/AboutTourPlan";
 import RecommendedCheckoutPage from "../Pages/About/RecommendedCheckoutPage/RecommendedCheckoutPage";
 import CheckOutPage from "../Pages/CheckOutPage/CheckOutPage";
+import Contact from "../Pages/Contact/Contact";
 import Destinations from "../Pages/Destinations/Destinations";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -65,6 +66,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
             },
             {
                 path: '/recommendedCheckoutPage/:id',
