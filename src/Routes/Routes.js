@@ -13,11 +13,8 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Shop from "../Pages/Shop/Shop";
-// import AllToursPage from "../Pages/Tours/AllToursPage/AllToursPage";
 import BoxesTours from "../Pages/Tours/BoxesTours/BoxesTours";
 import CheckOutTours from "../Pages/Tours/CheckOutTours/CheckOutTours";
-// import PriceHighToLowPage from "../Pages/Tours/PriceHighToLowPage/PriceHighToLowPage";
-// import PriceLowToHighPage from "../Pages/Tours/PriceLowToHighPage/PriceLowToHighPage";
 import StandardTours from "../Pages/Tours/StandardTours/StandardTours";
 import ToursGallery from "../Pages/Tours/ToursGallery/ToursGallery";
 import PrivateRoute from "./PrivateRoute";
@@ -55,25 +52,6 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkoutTours',
                 element: <CheckOutTours></CheckOutTours>
-                
-                // children: [
-                //     {
-                //         path: '/checkoutTours/priceLowToHigh',
-                //         element: <PriceLowToHighPage></PriceLowToHighPage>,
-                //         loader: ()=> fetch('http://localhost:5000/alltours')
-                //     },
-                //     {
-                //         path: '/checkoutTours/priceHighToLow',
-                //         element: <PriceHighToLowPage></PriceHighToLowPage>,
-                //         loader: ()=> fetch('http://localhost:5000/alltours')
-                //     },
-                //     {
-                //         path: '/checkoutTours/allPrice',
-                //         element: <AllToursPage></AllToursPage>,
-                //         loader: ()=> fetch('http://localhost:5000/alltours')
-                //     }
-                // ]
-
             },
             {
                 path: '/shop',

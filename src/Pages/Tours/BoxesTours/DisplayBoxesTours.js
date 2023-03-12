@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 
 const DisplayBoxesTours = ({ singleTour }) => {
-    const { cost, days, years, img, place_title, desc, ratting, } = singleTour;
+    const { cost, days, years, img, place_title, desc, ratting, _id } = singleTour;
     return (
         <div className="card card-compact w-full rounded bg-base-100 shadow-xl">
-            <Link to=''><img src={img} alt="Shoes" /></Link>
+            <Link to={`/checkoutPage/${_id}`}><img src={img} alt="Shoes" /></Link>
             <div className="card-body">
                 <div className='flex items-center justify-between'>
                     <h2 className="card-title ">{place_title}</h2>

@@ -12,10 +12,18 @@ const CheckOutPage = () => {
                 <img src={heroImg} className='w-full' alt="" />
             </div>
             <HeroTitle place_title={place_title}></HeroTitle>
-            
-            <div className='px-[7%]'>
-                <Navigation></Navigation>
-                <Outlet></Outlet>
+
+            <div className='grid lg:grid-cols-3 mb:grid-cols-2 grid-cols-1 px-[7%]'>
+                <div className='lg:col-span-2'>
+                    <Navigation></Navigation>
+                    <hr />
+                    <Outlet></Outlet>
+                </div>
+                
+                <div className='lg:col-span-1'>
+                    <h1>this is aside right</h1>
+                </div>
+
             </div>
         </div>
     );

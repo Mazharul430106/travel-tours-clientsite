@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 import { FiUser } from 'react-icons/fi';
 
 const DisplayCheckOutTours = ({ singleTour }) => {
-    const { cost, days, years, img, place_title, desc, ratting, } = singleTour;
+    const { cost, days, years, img, place_title, desc, ratting, _id } = singleTour;
 
     return (
-        <div className='grid lg:grid-cols-3 mb:grid-cols-2 grid-cols-1 gap-2 border border-t-0 border-r-0 border-l-0 mt-5  '>
+        <div className='grid lg:grid-cols-3 mb:grid-cols-2 grid-cols-1 gap-2 border border-t-0 border-r-0 border-l-0 mt-4 mb-5  '>
             <div className='col-span-1'>
-                <img src={img} className='h-full' alt="" />
+               <Link to={`/checkoutPage/${_id}`}><img src={img} className='h-full' alt="Image Not Found" /></Link>
             </div>
             <div className='col-span-2 px-3'>
                 <h2 className='text-2xl text-left font-semibold pt-4'>{place_title}</h2>

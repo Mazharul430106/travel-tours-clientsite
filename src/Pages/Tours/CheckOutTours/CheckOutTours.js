@@ -4,6 +4,7 @@ import DisplayCheckOutTours from './DisplayCheckOutTours';
 import { BsArrowDownUp } from 'react-icons/bs';
 import {  HiOutlineViewGrid } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import { FaSlidersH, FaTh } from 'react-icons/fa';
 const CheckOutTours = () => {
     const [allTours, setAllTours] = useState([])
     const [isAsc, setIsAsc] = useState(true);
@@ -26,7 +27,9 @@ const CheckOutTours = () => {
                             <BsArrowDownUp></BsArrowDownUp>
                             <button onClick={() => setIsAsc(!isAsc)}>{isAsc ? 'PriceLowToHigh' : 'PriceHighToLow'}</button>
                         </div>
-                       <Link onClick=''><HiOutlineViewGrid></HiOutlineViewGrid></Link>
+                       <Link to='/standardTours'><FaSlidersH></FaSlidersH></Link> 
+                       <Link to='/boxesTours'><HiOutlineViewGrid></HiOutlineViewGrid></Link>
+                       <FaTh></FaTh>
                     </div>
                     <div className='my-1'>
                         <hr className='border' />
