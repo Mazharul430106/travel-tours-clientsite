@@ -16,7 +16,7 @@ const Newsletter = () => {
                                 <input type="email" placeholder="Email *" className="input input-bordered rounded-none" />
                             </div>
 
-                            <div className="form-control mt-6">
+                            <div className="form-control mt-6 mb-5">
                                 <button className="btn bg-cyan-600 hover:bg-cyan-700 rounded-none">Subscribe</button>
                             </div>
                         </form>

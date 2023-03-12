@@ -14,7 +14,7 @@ const DisplayCheckOutTours = ({ singleTour }) => {
             </div>
             <div className='col-span-2 px-3'>
                 <h2 className='text-2xl text-left font-semibold pt-4'>{place_title}</h2>
-                <div className='flex items-center gap-1 mt-3'>
+                <div className='flex items-center gap-1 mt-3 text-gray-500'>
                     <FaSmile></FaSmile>
                     <span>{ratting}</span>
                 </div>
