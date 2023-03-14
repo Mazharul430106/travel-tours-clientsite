@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import TourHeroImg from '../../../assets/allTour-hero.jpg';
 import DisplayCheckOutTours from './DisplayCheckOutTours';
-import { BsArrowDownUp, BsBoxArrowDown, BsBoxArrowUp } from 'react-icons/bs';
+import { BsBoxArrowDown, BsBoxArrowUp } from 'react-icons/bs';
 import { HiOutlineViewGrid } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import { FaSlidersH, FaTh } from 'react-icons/fa';
 import Newsletter from '../../../Component/Newsletter/Newsletter';
 const CheckOutTours = () => {
     const [allTours, setAllTours] = useState([])
+    // console.log(allTours)
     const [isAsc, setIsAsc] = useState(true);
 
     useEffect(() => {
@@ -55,6 +56,10 @@ const CheckOutTours = () => {
                     <div className='mt-5'>
                         <Newsletter></Newsletter>
                     </div>
+                    <div>
+                        
+                    </div>
+
                 </div>
             </div>
         </div>
